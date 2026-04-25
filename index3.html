@@ -1,11 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Azure Resort & Spa – T-Goda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="Stylesheet/style3.css">
 </head>
+
 <body>
-    
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="nav-left">
+                <span class="logo">T-Goda</span>
+                <div class="nav-links">
+                    <a href="#" class="active">Hotels</a>
+                    <a href="#">Flights</a>
+                    <a href="#">Bundles</a>
+                    <a href="#">Activities</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="btn-ghost">Sign In</button>
+                <button class="btn-primary">Create Account</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page">
+        <main class="main">
+
+            <!-- BREADCRUMB -->
+            <nav class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="sep">›</span>
+                <a href="#">Greece</a>
+                <span class="sep">›</span>
+                <a href="#">Crete Hotels</a>
+                <span class="sep">›</span>
+                <span class="current">Grand Azure Resort &amp; Spa</span>
+            </nav>
+
+            <!-- HOTEL HEADER -->
+            <div class="hotel-header">
+                <div class="hotel-info">
+                    <div class="hotel-meta">
+                        <div class="stars">
+                            <span>★★★★★</span>
+                        </div>
+                        <span class="badge-resort">RESORT</span>
+                    </div>
+                    <div class="hotel-name">Grand Azure Resort &amp; Spa, Elounda</div>
+                    <div class="hotel-address">
+                        <img src="icon/Map.png" alt="">
+                        <span>Elounda Bay, Crete, 72053, Greece</span>
+                        <a class="show-map">Show on map</a>
+                    </div>
+                </div>
+                <div class="hotel-actions">
+                    <button class="btn-outline" id="shareBtn">
+                        <img src="icon/Share.png.png" alt="">
+                        Share
+                    </button>
+                    <button class="btn-outline" id="saveBtn">
+                        <img src="icon/Hearth.png" alt="">
+                        Save
+                    </button>
+                    <button class="btn-book" onclick="">Book Now</button>
+                </div>
+            </div>
+
+            <!-- GALLERY -->
+            <div class="gallery">
+                <div class="gallery-main gallery-item" onclick="openLightbox(0)">
+                    <img src="source/RoomPage/Img1.png" alt="Resort pool view" />
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="source/RoomPage/Img2.png" alt="Hotel room" />
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="source/RoomPage/Img3.png" alt="Outdoor area" />
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="source/RoomPage/Img4.png" alt="Hotel lobby" />
+                </div>
+                <div class="gallery-item overlay-item" onclick="openLightbox(4)">
+                    <img src="source/RoomPage/Img5.png" alt="Spa" />
+                    <div class="photo-overlay"><span>+124 photos</span></div>
+                </div>
+            </div>
+
+            <!-- CONTENT GRID -->
+            <div class="content-grid">
+                <!-- LEFT -->
+                <div class="left-side">
+                    <!-- Overview -->
+                    <section>
+                        <h2 class="section-heading">Overview</h2>
+                        <p class="section-text">Experience unparalleled luxury at the Grand Azure Resort &amp; Spa,
+                            nestled on the pristine shores of Elounda Bay. This architectural masterpiece blends
+                            traditional Cretan charm with ultra-modern design, offering guests breathtaking panoramic
+                            views of the Mediterranean. Whether you're seeking a romantic getaway or a rejuvenation
+                            retreat, our world-class amenities and personalized service ensure a stay that transcends
+                            the ordinary.</p>
+                    </section>
+
+                    <!-- Amenities -->
+                    <section>
+                        <h2 class="section-heading">Popular Amenities</h2>
+                        <div class="amenities-grid">
+                            <div class="amenity"><img src="icon/Pool.png" alt=""> 3 Outdoor Pools</div>
+                            <div class="amenity"><img src="icon/Service.png" alt=""> Full-service Spa</div>
+                            <div class="amenity"><img src="icon/Restuarants.png" alt=""> 5 Restaurants</div>
+                            <div class="amenity"><img src="icon/Gym.png" alt=""> Gym &amp; Fitness</div>
+                            <div class="amenity"><img src="icon/Wifi.png" alt=""> Free High-speed Wi-Fi</div>
+                            <div class="amenity"><img src="icon/Beach.png" alt=""> Private Beach</div>
+                        </div>
+                        <div class="see-all-btn" onclick="">
+                            <span>See all 45 amenities</span>
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1l5 5 5-5" stroke="#005cbd" stroke-width="1.8" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="right-side">
+                    <!-- Rating card -->
+                    <div class="rating-card">
+                        <div class="rating-top">
+                            <div>
+                                <div class="rating-label">Excellent</div>
+                                <div class="rating-sub">1,248 verified reviews</div>
+                            </div>
+                            <div class="rating-score">9.2</div>
+                        </div>
+                        <div class="rating-bars">
+                            <div class="rating-row">
+                                <div class="rating-row-head"><span>Cleanliness</span><span>9.5</span></div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width:95%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-row">
+                                <div class="rating-row-head"><span>Service</span><span>9.2</span></div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width:92%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-row">
+                                <div class="rating-row-head"><span>Location</span><span>8.9</span></div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width:89%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map card -->
+                    <div class="map-card">
+                        <img class="map-img" src="source/RoomPage/Img6.png" alt="Map location" />
+                        <div class="map-info">
+                            <p>Near Spinalonga Island</p>
+                            <p>15 min walk to city center</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROOM SELECTION -->
+            <div class="room-section">
+                <h2 class="section-heading" style="margin-bottom:0">Select Your Room</h2>
+                <div class="room-table-wrap">
+                    <table class="room-table">
+                        <thead>
+                            <tr>
+                                <th>Room Type</th>
+                                <th>Sleeps</th>
+                                <th>Today's Price</th>
+                                <th>Options</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Featured row -->
+                            <tr class="featured">
+                                <td>
+                                    <div class="room-name">
+                                        Presidential Sea Front Suite
+                                        <span class="badge-offer">LIMITED TIME OFFER</span>
+                                    </div>
+                                    <div class="room-desc">85m² • Panoramic Sea View • Infinity Pool Access</div>
+                                    <div class="room-link" onclick="showRoomDetails('Presidential Sea Front Suite')">↗
+                                        Room details</div>
+                                </td>
+                                <td>
+                                    <div class="sleeps">
+                                        <img src="icon/Adult.png">
+                                        <img src="icon/Adult.png">
+                                        <img src="icon/Adult.png">
+                                        <img src="icon/Adult.png">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="price-old">$1,295</div>
+                                    <div class="price-now sale">$862</div>
+                                    <div class="price-incl">Includes taxes &amp; fees</div>
+                                </td>
+                                <td>
+                                    <div class="option-item"><img src="icon/tick.png"> Free Airport Transfer
+                                    </div>
+                                    <div class="option-item"><img src="icon/tick.png"> All-Inclusive Premium
+                                    </div>
+                                    <div class="option-alert">Only 1 room left!</div>
+                                </td>
+                                <td><button class="btn-select danger"
+                                        onclick="selectRoom('Presidential Sea Front Suite', 862)">Select</button></td>
+                            </tr>
+                            <!-- Room 1 -->
+                            <tr>
+                                <td>
+                                    <div class="room-name">Deluxe Garden View Room</div>
+                                    <div class="room-desc">32m² • Balcony • Garden View • 1 King Bed</div>
+                                    <div class="room-link" onclick="showRoomDetails('Deluxe Garden View Room')">↗ Room
+                                        details</div>
+                                </td>
+                                <td>
+                                    <div class="sleeps">
+                                        <img src="icon/Adult.png">
+                                        <img src="icon/Adult.png">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="price-old">$345</div>
+                                    <div class="price-now">$264</div>
+                                    <div class="price-incl">Includes taxes &amp; fees</div>
+                                </td>
+                                <td>
+                                    <div class="option-item"><img src="icon/tick.png"> Free Cancellation</div>
+                                    <div class="option-item"><img src="icon/tick.png"> Breakfast Included</div>
+                                </td>
+                                <td><button class="btn-select primary"
+                                        onclick="selectRoom('Deluxe Garden View Room', 264)">Select</button></td>
+                            </tr>
+                            <!-- Room 2 -->
+                            <tr>
+                                <td>
+                                    <div class="room-name">Junior Suite with Private Pool</div>
+                                    <div class="room-desc">45m² • Private Pool • Sea View • King Bed</div>
+                                    <div class="room-link" onclick="showRoomDetails('Junior Suite with Private Pool')">↗
+                                        Room details</div>
+                                </td>
+                                <td>
+                                    <div class="sleeps">
+                                        <img src="icon/Adult.png">
+                                        <img src="icon/Adult.png">
+                                        <img src="icon/Kid.png">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="price-old">$626</div>
+                                    <div class="price-now">$445</div>
+                                    <div class="price-incl">Includes taxes &amp; fees</div>
+                                </td>
+                                <td>
+                                    <div class="option-item"><img src="icon/tick.png"> Free Cancellation</div>
+                                    <div class="option-item"><img src="icon/tick.png"> All-Inclusive</div>
+                                    <div class="option-alert">Only 2 rooms left!</div>
+                                </td>
+                                <td><button class="btn-select primary"
+                                        onclick="selectRoom('Junior Suite with Private Pool', 445)">Select</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- REVIEWS -->
+            <div class="reviews-section">
+                <div class="reviews-header">
+                    <h2>Guest Reviews</h2>
+                    <span class="read-all">Read all 1,248 reviews</span>
+                </div>
+                <div class="reviews-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div>
+                            <div class="review-top">
+                                <div class="review-stars"><img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                </div>
+                                <span class="review-date">May 12, 2024</span>
+                            </div>
+                            <p class="review-text">"An absolute paradise. The views from the Presidential Suite are
+                                unmatched. The service was impeccable from start to finish."</p>
+                        </div>
+                        <div class="reviewer">
+                            <div class="avatar" style="background:#d7e2ff; color:#001a40;">SM</div>
+                            <div>
+                                <div class="reviewer-name">Sophia Martinez</div>
+                                <div class="reviewer-country">United Kingdom</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div>
+                            <div class="review-top">
+                                <div class="review-stars"><img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/no-star.png" alt=""><span style="color:#d1d5db;"></span>
+                                </div>
+                                <span class="review-date">Apr 28, 2024</span>
+                            </div>
+                            <p class="review-text">"Excellent facilities and great breakfast selection. The private
+                                beach is beautiful, though the city center is a bit of a walk."</p>
+                        </div>
+                        <div class="reviewer">
+                            <div class="avatar" style="background:#ffd9dd; color:#400013;">JW</div>
+                            <div>
+                                <div class="reviewer-name">James Wilson</div>
+                                <div class="reviewer-country">United States</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <div>
+                            <div class="review-top">
+                                <div class="review-stars"><img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                    <img src="icon/star.png" alt="">
+                                </div>
+                                <span class="review-date">Apr 15, 2024</span>
+                            </div>
+                            <p class="review-text">"The spa treatments were heavenly. Truly a five-star experience. We
+                                will definitely be coming back next summer."</p>
+                        </div>
+                        <div class="reviewer">
+                            <div class="avatar" style="background:#ffdcbd; color:#2c1600;">AK</div>
+                            <div>
+                                <div class="reviewer-name">Anna Kowalski</div>
+                                <div class="reviewer-country">Germany</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo" style="font-size:20px;color:#0f172a;display:block;margin-bottom:16px;">T-Goda</span>
+                <p class="footer-tagline">Making world travel accessible, affordable, and delightful for everyone since
+                    2024. Your journey starts here.</p>
+                <p class="footer-copy">© 2024 T-Goda Booking. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 16C24 22.1406 19.3594 27.2031 13.4531 27.9531V19.7031H16.6875L17.3438 16H13.4531V14.7344C13.4531 12.7656 14.2031 12.0156 16.1719 12.0156C16.7812 12.0156 17.25 12.0625 17.5312 12.0625V8.78125C17.0156 8.59375 15.7031 8.45312 14.9531 8.45312C10.9219 8.45312 9.09375 10.375 9.09375 14.4531V16H6.60938V19.7031H9.09375V27.6719C3.84375 26.3594 0 21.625 0 16C0 9.39062 5.34375 4 12 4C18.6094 4 24 9.39062 24 16Z"
+                                fill="#D1D5DB" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram"><svg width="22" height="32" viewBox="0 0 22 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.5469 10.6094C13.5 10.6094 15.9375 13.0469 15.9375 16C15.9375 19 13.5 21.3906 10.5469 21.3906C7.54688 21.3906 5.15625 19 5.15625 16C5.15625 13.0469 7.54688 10.6094 10.5469 10.6094ZM10.5469 19.5156C12.4688 19.5156 14.0156 17.9688 14.0156 16C14.0156 14.0781 12.4688 12.5312 10.5469 12.5312C8.57812 12.5312 7.03125 14.0781 7.03125 16C7.03125 17.9688 8.625 19.5156 10.5469 19.5156ZM17.3906 10.4219C17.3906 9.71875 16.8281 9.15625 16.125 9.15625C15.4219 9.15625 14.8594 9.71875 14.8594 10.4219C14.8594 11.125 15.4219 11.6875 16.125 11.6875C16.8281 11.6875 17.3906 11.125 17.3906 10.4219ZM20.9531 11.6875C21.0469 13.4219 21.0469 18.625 20.9531 20.3594C20.8594 22.0469 20.4844 23.5 19.2656 24.7656C18.0469 25.9844 16.5469 26.3594 14.8594 26.4531C13.125 26.5469 7.92188 26.5469 6.1875 26.4531C4.5 26.3594 3.04688 25.9844 1.78125 24.7656C0.5625 23.5 0.1875 22.0469 0.09375 20.3594C0 18.625 0 13.4219 0.09375 11.6875C0.1875 10 0.5625 8.5 1.78125 7.28125C3.04688 6.0625 4.5 5.6875 6.1875 5.59375C7.92188 5.5 13.125 5.5 14.8594 5.59375C16.5469 5.6875 18.0469 6.0625 19.2656 7.28125C20.4844 8.5 20.8594 10 20.9531 11.6875ZM18.7031 22.1875C19.2656 20.8281 19.125 17.5469 19.125 16C19.125 14.5 19.2656 11.2188 18.7031 9.8125C18.3281 8.92188 17.625 8.17188 16.7344 7.84375C15.3281 7.28125 12.0469 7.42188 10.5469 7.42188C9 7.42188 5.71875 7.28125 4.35938 7.84375C3.42188 8.21875 2.71875 8.92188 2.34375 9.8125C1.78125 11.2188 1.92188 14.5 1.92188 16C1.92188 17.5469 1.78125 20.8281 2.34375 22.1875C2.71875 23.125 3.42188 23.8281 4.35938 24.2031C5.71875 24.7656 9 24.625 10.5469 24.625C12.0469 24.625 15.3281 24.7656 16.7344 24.2031C17.625 23.8281 18.375 23.125 18.7031 22.1875Z"
+                                fill="#D1D5DB" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter"><svg width="24" height="32" viewBox="0 0 24 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21.5156 11.125C21.5156 11.3594 21.5156 11.5469 21.5156 11.7812C21.5156 18.2969 16.5938 25.75 7.54688 25.75C4.73438 25.75 2.15625 24.9531 0 23.5469C0.375 23.5938 0.75 23.6406 1.17188 23.6406C3.46875 23.6406 5.57812 22.8438 7.26562 21.5312C5.10938 21.4844 3.28125 20.0781 2.67188 18.1094C3 18.1562 3.28125 18.2031 3.60938 18.2031C4.03125 18.2031 4.5 18.1094 4.875 18.0156C2.625 17.5469 0.9375 15.5781 0.9375 13.1875V13.1406C1.59375 13.5156 2.39062 13.7031 3.1875 13.75C1.82812 12.8594 0.984375 11.3594 0.984375 9.67188C0.984375 8.73438 1.21875 7.89062 1.64062 7.1875C4.07812 10.1406 7.73438 12.1094 11.8125 12.3438C11.7188 11.9688 11.6719 11.5938 11.6719 11.2188C11.6719 8.5 13.875 6.29688 16.5938 6.29688C18 6.29688 19.2656 6.85938 20.2031 7.84375C21.2812 7.60938 22.3594 7.1875 23.2969 6.625C22.9219 7.79688 22.1719 8.73438 21.1406 9.34375C22.125 9.25 23.1094 8.96875 23.9531 8.59375C23.2969 9.57812 22.4531 10.4219 21.5156 11.125Z"
+                                fill="#D1D5DB" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="#">Support</a>
+                    <a href="#">Mobile App</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+        <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+        <div class="lightbox-prev" onclick="prevPhoto()">‹</div>
+        <img id="lightboxImg" src="" alt="Gallery photo" />
+        <div class="lightbox-next" onclick="nextPhoto()">›</div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
 </body>
+
 </html>
