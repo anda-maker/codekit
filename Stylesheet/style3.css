@@ -874,88 +874,14 @@ footer {
     color: var(--blue-dark);
 }
 
-/* ── LIGHTBOX ── */
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    background: rgba(0, 0, 0, .92);
-    align-items: center;
-    justify-content: center;
+.fb-icon:hover path {
+    fill: #1877F2;
 }
 
-.lightbox.open {
-    display: flex;
+.ig-icon:hover path {
+    fill: #f218eb;
 }
 
-.lightbox img {
-    max-width: 90vw;
-    max-height: 85vh;
-    border-radius: 8px;
-    object-fit: contain;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 28px;
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.lightbox-prev,
-.lightbox-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 40px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, .1);
-    border-radius: 50%;
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background .2s;
-}
-
-.lightbox-prev {
-    left: 16px;
-}
-
-.lightbox-next {
-    right: 16px;
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
-    background: rgba(255, 255, 255, .25);
-}
-
-/* Toast */
-.toast {
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%) translateY(80px);
-    background: #1e293b;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    opacity: 0;
-    transition: transform .35s ease, opacity .35s ease;
-    z-index: 200;
-    pointer-events: none;
-}
-
-.toast.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+.tw-icon:hover path {
+    fill: #0095ff;
 }
