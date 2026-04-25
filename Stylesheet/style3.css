@@ -568,11 +568,6 @@ button {
     border-left: 2px solid var(--blue);
 }
 
-.btn-select.is-selected {
-    background-color: var(--red); 
-    color: white;
-}
-
 .room-table tbody td {
     padding: 20px 24px;
     vertical-align: middle;
@@ -737,6 +732,11 @@ button {
     flex-direction: column;
     justify-content: space-between;
     gap: 16px;
+}
+
+.review-card:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .review-stars {
