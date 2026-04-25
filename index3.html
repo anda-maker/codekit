@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grand Azure Resort & Spa – T-Goda</title>
+    <title>Room Detail</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="Stylesheet/style3.css">
+    <link rel="icon" href="source/RoomPage/Img1.png">
 </head>
 
 <body>
@@ -53,7 +54,11 @@
                 <div class="hotel-info">
                     <div class="hotel-meta">
                         <div class="stars">
-                            <span>★★★★★</span>
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png" alt="">
                         </div>
                         <span class="badge-resort">RESORT</span>
                     </div>
@@ -61,7 +66,8 @@
                     <div class="hotel-address">
                         <img src="icon/Map.png" alt="">
                         <span>Elounda Bay, Crete, 72053, Greece</span>
-                        <a class="show-map">Show on map</a>
+                        <a class="show-map" target="_blank" href="https://www.google.com/maps/search/Elounda+Bay,+Crete,+72053,+Greece/@35.2528235,25.7265245,816m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D">
+                            Show on map</a>
                     </div>
                 </div>
                 <div class="hotel-actions">
@@ -70,10 +76,10 @@
                         Share
                     </button>
                     <button class="btn-outline" id="saveBtn">
-                        <img src="icon/Hearth.png" alt="">
-                        Save
+                        <img class="saveicon" src="icon/Hearth.png" alt="icon">
+                        <span class="savetext">Save</span>
                     </button>
-                    <button class="btn-book" onclick="">Book Now</button>
+                    <button class="btn-book" id="bookBtn">Book Now</button>
                 </div>
             </div>
 
@@ -192,7 +198,7 @@
                         </thead>
                         <tbody>
                             <!-- Featured row -->
-                            <tr class="featured">
+                            <tr class="featured" id="Roomfeaturetr">
                                 <td>
                                     <div class="room-name">
                                         Presidential Sea Front Suite
@@ -222,11 +228,10 @@
                                     </div>
                                     <div class="option-alert">Only 1 room left!</div>
                                 </td>
-                                <td><button class="btn-select danger"
-                                        onclick="selectRoom('Presidential Sea Front Suite', 862)">Select</button></td>
+                                <td><button class="btn-select danger" id="Featured">Select</button></td>
                             </tr>
                             <!-- Room 1 -->
-                            <tr>
+                            <tr class="Room1" id="Room1tr">
                                 <td>
                                     <div class="room-name">Deluxe Garden View Room</div>
                                     <div class="room-desc">32m² • Balcony • Garden View • 1 King Bed</div>
@@ -248,15 +253,14 @@
                                     <div class="option-item"><img src="icon/tick.png"> Free Cancellation</div>
                                     <div class="option-item"><img src="icon/tick.png"> Breakfast Included</div>
                                 </td>
-                                <td><button class="btn-select primary"
-                                        onclick="selectRoom('Deluxe Garden View Room', 264)">Select</button></td>
+                                <td><button class="btn-select primary" id="Room1">Select</button></td>
                             </tr>
                             <!-- Room 2 -->
-                            <tr>
+                            <tr class="Room2" id="Room2tr">
                                 <td>
                                     <div class="room-name">Junior Suite with Private Pool</div>
                                     <div class="room-desc">45m² • Private Pool • Sea View • King Bed</div>
-                                    <div class="room-link" onclick="showRoomDetails('Junior Suite with Private Pool')">↗
+                                    <div class="room-link">↗
                                         Room details</div>
                                 </td>
                                 <td>
@@ -276,8 +280,7 @@
                                     <div class="option-item"><img src="icon/tick.png"> All-Inclusive</div>
                                     <div class="option-alert">Only 2 rooms left!</div>
                                 </td>
-                                <td><button class="btn-select primary"
-                                        onclick="selectRoom('Junior Suite with Private Pool', 445)">Select</button></td>
+                                <td><button class="btn-select primary" id="Room2">Select</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -428,6 +431,7 @@
 
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
+    <script src="script/index3.js"></script>
 </body>
 
 </html>
