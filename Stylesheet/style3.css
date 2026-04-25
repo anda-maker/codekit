@@ -208,15 +208,6 @@ button {
     align-items: center;
 }
 
-.stars {
-    display: flex;
-}
-
-.stars span {
-    color: #f59e0b;
-    font-size: 18px;
-}
-
 .badge-resort {
     background: var(--blue);
     color: #fff;
@@ -237,10 +228,6 @@ button {
     align-items: center;
     gap: 8px;
     color: var(--text-mid);
-}
-
-.hotel-address svg {
-    flex-shrink: 0;
 }
 
 .show-map {
@@ -272,11 +259,28 @@ button {
     background: #fff;
     cursor: pointer;
     transition: background .15s;
+    animation: clicked 0.6s linear;
 }
 
 .btn-outline:hover {
     background: #f8fafc;
 }
+
+#shareBtn:active {
+    transform: translateY(4px);
+    filter: brightness(0.9);
+}
+
+#saveBtn:active {
+    transform: translateY(4px);
+    filter: brightness(0.9);
+}
+
+#bookBtn:active {
+    transform: translateY(4px);
+    filter: brightness(0.9);
+}
+
 
 .btn-book {
     padding: 12px 32px;
@@ -559,9 +563,14 @@ button {
     border-top: 1px solid var(--border);
 }
 
-.room-table tbody tr.featured {
+.selected-row {
     background: var(--bg-row-highlight);
-    border-left: 4px solid var(--blue);
+    border-left: 2px solid var(--blue);
+}
+
+.btn-select.is-selected {
+    background-color: var(--red); 
+    color: white;
 }
 
 .room-table tbody td {

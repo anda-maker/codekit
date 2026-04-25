@@ -1,57 +1,57 @@
-const galleryPhotos = [];
-let currentPhoto = 0;
+const shareBtn = document.getElementById("shareBtn");
+const savedBtn = document.getElementById("saveBtn");
 
-function openLightbox(idx) {
-  currentPhoto = idx;
-  document.getElementById('lightboxImg').src = galleryPhotos[currentPhoto];
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeLightboxOnBg(e) {
-  if (e.target === document.getElementById('lightbox')) closeLightbox();
-}
-function prevPhoto() {
-  currentPhoto = (currentPhoto - 1 + galleryPhotos.length) % galleryPhotos.length;
-  document.getElementById('lightboxImg').src = galleryPhotos[currentPhoto];
-}
-function nextPhoto() {
-  currentPhoto = (currentPhoto + 1) % galleryPhotos.length;
-  document.getElementById('lightboxImg').src = galleryPhotos[currentPhoto];
-}
-document.addEventListener('keydown', e => {
-  if (!document.getElementById('lightbox').classList.contains('open')) return;
-  if (e.key === 'ArrowLeft') prevPhoto();
-  if (e.key === 'ArrowRight') nextPhoto();
-  if (e.key === 'Escape') closeLightbox();
-});
+const roomFeatureBtn = document.getElementById("Featured");
+const room1Btn = document.getElementById("Room1");
+const room2Btn = document.getElementById("Room2");
 
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
-}
+let saved = false;
+savedBtn.addEventListener('click', ()=> {
+    const textSpan = savedBtn.querySelector(".savetext");
+    const icon = savedBtn.querySelector(".saveicon");
+    if (saved == false) {
+        savedBtn.style.background = "var(--red)";
+        savedBtn.style.color = "#ffffff";
+        icon.style.filter = "invert(100%)";
+        textSpan.textContent = "Saved";
+        saved = true;
+    }
+    else {
+        savedBtn.style.backgroundColor = "#ffffff";
+        savedBtn.style.color = "#000000";
+        icon.style.filter = "invert(0%)";
+        textSpan.textContent = "Save";
+        saved = false;
+    }
+})
 
-function selectRoom(name, price) {
-  showToast(`✓ "${name}" added — $${price}/night`);
-}
-function bookNow() { showToast('Redirecting to booking…'); }
-function showRoomDetails(name) { showToast(`Loading details for ${name}…`); }
-function showAllAmenities() { showToast('Showing all 45 amenities…'); }
+// สร้างตัวแปรไว้เก็บค่าข้างนอกเพื่อให้ฟังก์ชันอื่นเรียกใช้ได้
+let selectedRoomId = null;
 
-document.getElementById('shareBtn').addEventListener('click', () => {
-  if (navigator.share) {
-    navigator.share({ title: 'Grand Azure Resort & Spa', url: location.href });
-  } else {
-    navigator.clipboard.writeText(location.href).then(() => showToast('Link copied to clipboard!'));
-  }
-});
-document.getElementById('saveBtn').addEventListener('click', function() {
-  const saved = this.classList.toggle('saved');
-  showToast(saved ? '❤️ Saved to your wishlist' : 'Removed from wishlist');
-  this.style.color = saved ? '#b61b4a' : '';
+document.querySelector('.room-table').addEventListener('click', function(e) {
+    const btn = e.target.closest('.btn-select');
+    if (!btn) return;
+
+    const row = btn.closest('tr');
+
+    if (row.classList.contains('selected-row')) {
+        row.classList.remove("selected-row");
+        btn.classList.remove("is-selected");
+        btn.textContent = "Select";
+        selectedRoomId = null;
+    }
+    else {
+        document.querySelectorAll('.room-table tr').forEach(tr => {
+            tr.classList.remove('selected-row');
+            const otherBtn = tr.querySelector("btn-select");
+            if (otherBtn) {
+                otherBtn.classList.remove("is-selected");
+                otherBtn.textContent = "Select";
+            }
+        });
+        row.classList.add('selected-row');
+        btn.classList.add("is-selected")
+        selectedRoomId = row.id;
+        btn.textContent = "Picked";
+    }
 });
